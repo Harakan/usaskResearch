@@ -19,8 +19,8 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module uartController(
-    input clk,rst,rx_pin,
-		output tx_pin,tx_start,rx_recieved,
+    input clk,rst,rx_pin,tx_start,
+	 output tx_pin,rx_recieved,
     input [7:0] tx_input,
     output [7:0] rx_output
     );
