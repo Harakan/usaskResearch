@@ -50,7 +50,7 @@ module uart_top(
 
 	 uartController uartControls(
     .clk(CLK_0),
-	 .rst(),
+	 .rst(test_pin0),
 	 .rx_pin(),
 	 .tx_pin(),
 	 .tx_start(tx_send),
