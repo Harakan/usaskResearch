@@ -29,9 +29,18 @@ output			int_req;		// bus access request signal
 input			int_gnt;		// bus access grant signal 
 
 // baud rate configuration, see baud_gen.v for more details.
+
+// Wills baud was calculated using baudCalculator.py (should be in same directory)
+// Wills Baud rate for 50MHz and a baud of 115200
+`define D_BAUD_FREQ			12'h240
+`define D_BAUD_LIMIT		16'h3AC9
+// Wills Baud rate for 50MHz and a baud of 9600
+//`define D_BAUD_FREQ			12'h30
+//`define D_BAUD_LIMIT		16'h3CD9
+
 // baud rate generator parameters for 115200 baud on 40MHz clock 
-`define D_BAUD_FREQ			12'h90
-`define D_BAUD_LIMIT		16'h0ba5
+//`define D_BAUD_FREQ			12'h90
+//`define D_BAUD_LIMIT		16'h0ba5
 // baud rate generator parameters for 115200 baud on 44MHz clock 
 // `define D_BAUD_FREQ			12'd23
 // `define D_BAUD_LIMIT		16'd527
