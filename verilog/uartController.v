@@ -19,13 +19,15 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module uartController(
-    input clk,rst,rx_pin,tx_start,
-	 output tx_pin,rx_recieved,
-    input [7:0] tx_input,
-    output [7:0] rx_output
+    input clk,rst,rx_pin,
+	 output tx_pin
     );
 
-	 reg [7:0] rx_output_reg;
+	 wire [7:0] rx_output;
+	 reg [7:0] tx_input;
+	 reg tx_start;
+	 wire rx_done;
+
 	 wire rx_recieving,tx_transmitting,recv_error;
 
 	 uart uart_phy(
@@ -42,13 +44,10 @@ module uartController(
     .recv_error(recv_error) // Indicates error in receiving packet.
     );
 
-	 //assign rx_output=rx_output_reg;
-	 
 	 always @(posedge clk)
 	 begin
-		rx_output_reg <= tx_input;
+		tx_start <= rx_recieved;
+		tx_input <= 0'h77;
 	 end
 	 
-
-
 endmodule
